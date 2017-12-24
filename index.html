@@ -1,25 +1,33 @@
 <html>
 	<head>
+		<meta charset="UTF-8">
 		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
 		<link href="./main.css" rel="stylesheet">
-
+		<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 	</head>
 	<body>
 	<center>
-		<div class="container app">
-			<div class="row">
-				<div class="randomVerb col-md-12" id="verb"></div>
-				<div class="conjugation-type col-md-12" id="conjugationType"></div>
-				<div class="col-md-12" id="input">
+		<div class="app">
+			<div class="">
+				<div class="randomVerb" id="verb"></div>
+				<div class="conjugation-type" id="conjugationType">
+					<div id="conjugationText">
+					</div>
+					<div id="conjugationText2">
+					</div>
+					<div id="conjugationTextHolder"></div>
+				</div>
+				<div class="col-md-12 answerBar" id="input">
 					<div class="box">
-						<input type="text" name="fname"><br>
+						<input type="text" name="fname" placeholder="答え"><br>
+						<i class="fa fa-arrow-right correct" aria-hidden="true"></i>
 					</div>
 				</div>
 			</div>
 		</div>
 	</center>
 	</body>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
 	<script src="./conjugationpractice.js"></script>
 </html>

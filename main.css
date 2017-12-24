@@ -10,20 +10,84 @@
   line-height: 100px;
 }
 #conjugationType{
-  font-size: 34px;
   height:100px;
+  width:2000px;
   line-height: 100px;
   background-color: #EADDB9;
+  overflow:hidden;
 }
+#conjugationTextHolder{
+  white-space:nowrap;
+  position:absolute;
+  right:0;
+  left:0;
+  opacity: 1;
+  font-size: 34px;
+  overflow: hidden;
+}
+#conjugationText{
+  -webkit-transition-property: all;
+  -webkit-transition-duration: .5s;
+  white-space:nowrap;
+  position:absolute;
+  right:0;
+  left:0;
+  opacity: 1;
+  font-size: 34px;
+  overflow: hidden;
+}
+
+.leavescreen{
+  -ms-transform: translate(-2000px,0); /* IE 9 */
+ -webkit-transform: translate(-2000px,0); /* Safari */
+ transform: translate(-2000px,0); /* Standard syntax */
+}
+
+.comeback{
+  -ms-transform: translate(2000px,0); /* IE 9 */
+ -webkit-transform: translate(2000px,0); /* Safari */
+ transform: translate(2000px,0); /* Standard syntax */
+}
+#conjugationText2{
+  overflow: hidden;
+  -webkit-transition-property: all;
+  -webkit-transition-duration: .5s;
+  opacity: 0;
+  position: absolute;
+  white-space:nowrap;
+  left:1000px;
+  right:0;
+  font-size: 34px;
+}
+
 #input{
   height:100px;
   line-height:80px;
 }
 #input input{
     font-size: 34px;
+    text-align: center;
 }
 
+.correct{
+  position:absolute;
+  right:20px;
+  top:0;
+  float:right;
+  font-size:50px !important;
+  cursor:hand;
+  line-height:100px !important;
+}
+
+.answerBar{
+  transition: background .3s linear;
+  -webkit-transition: background .3s linear;
+  -moz-transition: background .3s linear;
+}
+
+
 .box {
+    transition: background-color 0.5s ease;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
