@@ -2,6 +2,7 @@ var tree;
 var correctAnswer;
 var verbName;
 var functionCounter = 0;
+var whichVerbName;
 $.getJSON( "./verbs.json", function( data ) {
     tree = data;
     // console.log( "JSON Data: " + data);
@@ -21,26 +22,35 @@ function getVerb (){
   //console.log(tree[manifest[verbNum]]);
   var currentVerb = tree[manifest[verbNum]];
   //console.log(tree.manifest[verbNum]);
-  $("#verb").text(tree.manifest[verbNum]);
+
+  whichVerbName = tree.manifest[verbNum];
+  $("#verbRight").text(whichVerbName);
+  $("#verbRight").css("left","0").css("opacity","1");
   var verb = tree.manifest[verbNum];
   console.log(verb);
   //$("#conjugationType").text(currentVerb[tree.verbConjugationManifest[conjugationNum]]);
   var conjugationType = tree.verbConjugationManifest[conjugationNum];
   correctAnswer = tree[verb][conjugationType];
   verbName = tree.plainEnglishDictionary[conjugationType];
-  $("#conjugationText2").text(verbName);
-  $("#conjugationText2").css("left","0").css("opacity","1");
+  $("#conjugationTextRight").text(verbName);
+  $("#conjugationTextRight").css("left","0").css("opacity","1");
   //$("#conjugationText2").css("opacity","1");
 
 }
-$("#conjugationText2").on("transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd", function(){
+$("#conjugationTextRight").on("transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd", function(){
   if (functionCounter == 0){
-    $("#conjugationText").text("");
-    $("#conjugationText").removeClass("leavescreen");
-    $("#conjugationText").css("opacity","1");
+    $("#verbLeft").text("");
+    $("#verbLeft").removeClass("leavescreen");
+    $("#verbLeft").css("opacity","1");
+    $("#verb").text(whichVerbName);
+    $("#verbRight").text("");
+    $("#verbRight").css("left","1000px");
+    $("#conjugationTextLeft").text("");
+    $("#conjugationTextLeft").removeClass("leavescreen");
+    $("#conjugationTextLeft").css("opacity","1");
     $("#conjugationTextHolder").text(verbName);
-    $("#conjugationText2").text("")
-    $("#conjugationText2").css("left","1000px")
+    $("#conjugationTextRight").text("");
+    $("#conjugationTextRight").css("left","1000px")
   }
   functionCounter+=1;
 });
@@ -93,10 +103,14 @@ function checkCorrect(){
   }
   else{
     functionCounter = 0;
-    $("#conjugationText").text(verbName);
+    $("#verbLeft").text(whichVerbName);
+    $("#verb").text("");
+    $("#verbLeft").addClass("leavescreen");
+    $("#verbLeft").css("opacity","0");
+    $("#conjugationTextLeft").text(verbName);
     $("#conjugationTextHolder").text("");
-    $("#conjugationText").addClass("leavescreen");
-    $("#conjugationText").css("opacity", "0");
+    $("#conjugationTextLeft").addClass("leavescreen");
+    $("#conjugationTextLeft").css("opacity", "0");
     $(".answerBar").css("background-color", "white");
     counter = 0;
     getVerb();

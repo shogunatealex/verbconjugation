@@ -2,14 +2,48 @@
   margin-top:50px;
   margin-bottom:50px;
 }
-#verb{
-  font-size: 34px;
+#correctionContainer{
+  display:none;
+  z-index: 1;
+  position:absolute;
+  top:0;
+  height: 600px;
+  width:100%;
+  background-color:black;
+}
+#verbContainer{
+  z-index: 2;
+  height:100px;
+  width:2000px;
+  line-height: 100px;
+  background-color: #EADDB9;
+  overflow:hidden;
   background-color: #B04A49;
   color:white;
-  height: 100px;
-  line-height: 100px;
+}
+#verb{
+  white-space:nowrap;
+  position:absolute;
+  right:0;
+  left:0;
+  opacity: 1;
+  font-size: 34px;
+  overflow: hidden;
+}
+
+#verbRight{
+  overflow: hidden;
+  -webkit-transition-property: all;
+  -webkit-transition-duration: .5s;
+  opacity: 0;
+  position: absolute;
+  white-space:nowrap;
+  left:1000px;
+  right:0;
+  font-size: 34px;
 }
 #conjugationType{
+  z-index: 2;
   height:100px;
   width:2000px;
   line-height: 100px;
@@ -25,7 +59,19 @@
   font-size: 34px;
   overflow: hidden;
 }
-#conjugationText{
+#conjugationTextLeft{
+  -webkit-transition-property: all;
+  -webkit-transition-duration: .5s;
+  white-space:nowrap;
+  position:absolute;
+  right:0;
+  left:0;
+  opacity: 1;
+  font-size: 34px;
+  overflow: hidden;
+}
+
+#verbLeft{
   -webkit-transition-property: all;
   -webkit-transition-duration: .5s;
   white-space:nowrap;
@@ -48,7 +94,7 @@
  -webkit-transform: translate(2000px,0); /* Safari */
  transform: translate(2000px,0); /* Standard syntax */
 }
-#conjugationText2{
+#conjugationTextRight{
   overflow: hidden;
   -webkit-transition-property: all;
   -webkit-transition-duration: .5s;
